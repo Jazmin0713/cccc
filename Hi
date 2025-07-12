@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Malla Interactiva de Psicología</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; background: #f3f3f3; }
+    h2 { color: #2c3e50; }
+    table { width: 100%; border-collapse: collapse; margin-bottom: 30px; }
+    th, td { border: 1px solid #ccc; padding: 10px; background: #fff; text-align: left; }
+    .details { display: none; background-color: #eef7ff; }
+    .toggle-btn { cursor: pointer; color: #007bff; text-decoration: underline; }
+    .prereq { font-style: italic; color: #555; margin-top: 8px; display: block; }
+  </style>
+</head>
+<body>
+  <h2>Malla Curricular Interactiva - Psicología</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Ciclo</th>
+        <th>Cursos</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="toggle-btn" onclick="toggleDetails('ciclo1')">1° Ciclo</span></td>
+        <td>5 cursos</td>
+      </tr>
+      <tr id="ciclo1" class="details">
+        <td colspan="2">
+          - Desarrollo Humano y Social<br>
+          - Inglés I<br>
+          - Fundamentos Biológicos del Comportamiento Humano<br>
+          - Bases Estructurales y Funcionales del Comportamiento Humano<br>
+          - Introducción a la Práctica de la Psicología
+        </td>
+      </tr>
+
+      <tr>
+        <td><span class="toggle-btn" onclick="toggleDetails('ciclo2')">2° Ciclo</span></td>
+        <td>5 cursos</td>
+      </tr>
+      <tr id="ciclo2" class="details">
+        <td colspan="2">
+          - Estilo de Vida, Salud y Medio Ambiente<br>
+          - Inglés II <span class="prereq">(Requiere: Inglés I)</span><br>
+          - Desarrollo del Niño y del Adolescente <span class="prereq">(Requiere: Fund. Biológicos)</span><br>
+          - Teorías Psicológicas del Comportamiento Humano <span class="prereq">(Requiere: Bases Estructurales)</span><br>
+          - Procesos Psicológicos I <span class="prereq">(Requiere: Introducción a la Práctica)</span>
+        </td>
+      </tr>
+
+      <tr>
+        <td><span class="toggle-btn" onclick="toggleDetails('ciclo3')">3° Ciclo</span></td>
+        <td>5 cursos</td>
+      </tr>
+      <tr id="ciclo3" class="details">
+        <td colspan="2">
+          - Comportamiento de la Sociedad y de los Grupos<br>
+          - Desarrollo del Adulto y del Adulto Mayor <span class="prereq">(Requiere: Desarrollo del Niño)</span><br>
+          - Sexualidad Humana <span class="prereq">(Requiere: Teorías Psicológicas)</span><br>
+          - Procesos Psicológicos II <span class="prereq">(Requiere: Procesos Psicológicos I)</span><br>
+          - Evaluación Psicológica I <span class="prereq">(Requiere: Teorías Psicológicas)</span>
+        </td>
+      </tr>
+
+      <tr>
+        <td><span class="toggle-btn" onclick="toggleDetails('ciclo4')">4° Ciclo</span></td>
+        <td>5 cursos</td>
+      </tr>
+      <tr id="ciclo4" class="details">
+        <td colspan="2">
+          - Salud Pública y Sistemas de Salud<br>
+          - Psicopatología del Adulto I <span class="prereq">(Requiere: Desarrollo del Adulto)</span><br>
+          - Psicofarmacología <span class="prereq">(Requiere: Fund. Biológicos)</span><br>
+          - Neurociencia del Aprendizaje <span class="prereq">(Requiere: Procesos Psicológicos II)</span><br>
+          - Evaluación Psicológica II <span class="prereq">(Requiere: Evaluación Psicológica I)</span>
+        </td>
+      </tr>
+
+      <tr>
+        <td><span class="toggle-btn" onclick="toggleDetails('ciclo5')">5° Ciclo</span></td>
+        <td>5 cursos</td>
+      </tr>
+      <tr id="ciclo5" class="details">
+        <td colspan="2">
+          - Prevención y Promoción de la Salud<br>
+          - Psicopatología del Adulto II <span class="prereq">(Requiere: Psicopatología del Adulto I)</span><br>
+          - Gestión del Talento Humano <span class="prereq">(Requiere: Procesos Psicológicos II)</span><br>
+          - Intervenciones en Entornos Educativos <span class="prereq">(Requiere: Neurociencia del Aprendizaje)</span><br>
+          - Evaluación Psicológica III <span class="prereq">(Requiere: Evaluación Psicológica II)</span>
+        </td>
+      </tr>
+
+      <tr>
+        <td><span class="toggle-btn" onclick="toggleDetails('ciclo6')">6° Ciclo</span></td>
+        <td>5 cursos</td>
+      </tr>
+      <tr id="ciclo6" class="details">
+        <td colspan="2">
+          - Ciencia y Descubrimiento<br>
+          - Procesos Psicopatológicos en Niños y Adolescentes <span class="prereq">(Requiere: Psicopatología del Adulto II)</span><br>
+          - Consejería Psicológica <span class="prereq">(Requiere: Evaluación Psicológica III)</span><br>
+          - Orientación y Consejería Profesional y de Carrera <span class="prereq">(Requiere: Evaluación Psicológica III)</span><br>
+          - Electivo I
+        </td>
+      </tr>
+
+      <tr>
+        <td><span class="toggle-btn" onclick="toggleDetails('ciclo7')">7° Ciclo</span></td>
+        <td>5 cursos</td>
+      </tr>
+      <tr id="ciclo7" class="details">
+        <td colspan="2">
+          - Intervenciones en Salud <span class="prereq">(Requiere: Intervenciones en Entornos Educativos)</span><br>
+          - Evaluación y Rehabilitación Neuropsicológica <span class="prereq">(Requiere: Neurociencia del Aprendizaje)</span><br>
+          - Intervenciones Psicoterapéuticas en Adultos <span class="prereq">(Requiere: Consejería Psicológica)</span><br>
+          - Intervenciones Grupales y Comunitarias <span class="prereq">(Requiere: Intervenciones en Entornos Educativos)</span><br>
+          - Electivo II
+        </td>
+      </tr>
+
+      <tr>
+        <td><span class="toggle-btn" onclick="toggleDetails('ciclo8')">8° Ciclo</span></td>
+        <td>5 cursos</td>
+      </tr>
+      <tr id="ciclo8" class="details">
+        <td colspan="2">
+          - Emprendimiento en Psicología y Gestión de Servicios de Atención Psicológica <span class="prereq">(Requiere: Intervenciones Grupales y Comunitarias)</span><br>
+          - Temas Avanzados en Psicología <span class="prereq">(Requiere: Intervenciones en Salud)</span><br>
+          - Intervenciones Psicológicas en Entornos Legales <span class="prereq">(Requiere: Intervenciones en Salud)</span><br>
+          - Intervenciones Psicoterapéuticas en Niños y Adolescentes <span class="prereq">(Requiere: Intervenciones Psicoterapéuticas en Adultos)</span><br>
+          - Electivo III
+        </td>
+      </tr>
+
+      <tr>
+        <td><span class="toggle-btn" onclick="toggleDetails('ciclo9')">9° Ciclo</span></td>
+        <td>3 cursos</td>
+      </tr>
+      <tr id="ciclo9" class="details">
+        <td colspan="2">
+          - Seminario de Tesis I <span class="prereq">(Requiere: Ciencia y Descubrimiento)</span><br>
+          - Prácticas Preprofesionales I <span class="prereq">(Requiere: Todos los cursos del 8° ciclo)</span><br>
+          - Seminarios de Integración I <span class="prereq">(Requiere: Emprendimiento en Psicología)</span>
+        </td>
+      </tr>
+
+      <tr>
+        <td><span class="toggle-btn" onclick="toggleDetails('ciclo10')">10° Ciclo</span></td>
+        <td>3 cursos</td>
+      </tr>
+      <tr id="ciclo10" class="details">
+        <td colspan="2">
+          - Seminario de Tesis II <span class="prereq">(Requiere: Seminario de Tesis I)</span><br>
+          - Prácticas Preprofesionales II <span class="prereq">(Requiere: Prácticas Preprofesionales I)</span><br>
+          - Seminarios de Integración II <span class="prereq">(Requiere: Seminarios de Integración I)</span>
+        </td>
+      </tr>
+
+      <tr>
+        <td><span class="toggle-btn" onclick="toggleDetails('electivos')">Electivos</span></td>
+        <td>8 cursos</td>
+      </tr>
+      <tr id="electivos" class="details">
+        <td colspan="2">
+          - Manejo del Estrés para el Bienestar<br>
+          - Fundamentos del Bienestar<br>
+          - Impacto de la Actividad Física en la Salud y Enfermedad<br>
+          - Determinantes Sociales de Salud y Conductas de Salud<br>
+          - Salud Ambiental y Urbana<br>
+          - Métodos de Investigación para Profesionales de Salud<br>
+          - La Dieta Occidental<br>
+          - Antropología Médica: Cultura y Salud
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script>
+    function toggleDetails(id) {
+      const row = document.getElementById(id);
+      row.style.display = (row.style.display === 'table-row') ? 'none' : 'table-row';
+    }
+  </script>
+</body>
+</html>
