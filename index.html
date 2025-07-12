@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Malla Curricular Interactiva - Psicología</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Malla Curricular Interactiva</title>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f2f6f9;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f6f8;
       margin: 0;
       padding: 20px;
     }
@@ -17,156 +17,185 @@
     }
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 15px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
       margin-top: 30px;
     }
     .card {
-      background-color: white;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-      padding: 15px;
-      transition: transform 0.2s ease;
-    }
-    .card:hover {
-      transform: scale(1.02);
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      padding: 16px;
+      transition: 0.3s ease;
     }
     .card h3 {
-      margin-top: 0;
-      color: #0077cc;
+      margin: 0;
       cursor: pointer;
+      color: #0077cc;
     }
-    .content {
+    .courses {
       display: none;
       margin-top: 10px;
     }
     .course {
-      background-color: #ecf3f9;
       padding: 8px;
+      margin: 4px 0;
+      border: 1px solid #ccc;
       border-radius: 6px;
-      margin: 5px 0;
+      background-color: #f9f9f9;
       cursor: pointer;
-      transition: background-color 0.2s;
     }
-    .course:hover {
-      background-color: #d0e7fa;
+    .course.completed {
+      background-color: #d1f7c4;
+      border-color: #7ac27d;
     }
     .prereq {
-      display: block;
-      font-style: italic;
-      color: #555;
-      font-size: 13px;
+      font-size: 12px;
+      color: #888;
     }
   </style>
 </head>
 <body>
   <h1>Malla Curricular Interactiva</h1>
-  <div class="grid">
-    <div class="card">
-      <h3 onclick="toggle(this)">1° Ciclo</h3>
-      <div class="content">
-        <div class="course">Desarrollo Humano y Social</div>
-        <div class="course">Inglés I</div>
-        <div class="course">Fundamentos Biológicos del Comportamiento Humano</div>
-        <div class="course">Bases Estructurales y Funcionales del Comportamiento Humano</div>
-        <div class="course">Introducción a la Práctica de la Psicología</div>
-      </div>
-    </div>
-    <div class="card">
-      <h3 onclick="toggle(this)">2° Ciclo</h3>
-      <div class="content">
-        <div class="course">Estilo de Vida, Salud y Medio Ambiente</div>
-        <div class="course">Inglés II <span class="prereq">Requiere: Inglés I</span></div>
-        <div class="course">Desarrollo del Niño y del Adolescente <span class="prereq">Requiere: Fund. Biológicos</span></div>
-        <div class="course">Teorías Psicológicas <span class="prereq">Requiere: Bases Estructurales</span></div>
-        <div class="course">Procesos Psicológicos I <span class="prereq">Requiere: Introducción a la Práctica</span></div>
-      </div>
-    </div>
-    <div class="card">
-      <h3 onclick="toggle(this)">3° Ciclo</h3>
-      <div class="content">
-        <div class="course">Comportamiento de la Sociedad y de los Grupos</div>
-        <div class="course">Desarrollo del Adulto y del Adulto Mayor <span class="prereq">Requiere: Desarrollo del Niño</span></div>
-        <div class="course">Sexualidad Humana <span class="prereq">Requiere: Teorías Psicológicas</span></div>
-        <div class="course">Procesos Psicológicos II <span class="prereq">Requiere: Procesos Psicológicos I</span></div>
-        <div class="course">Evaluación Psicológica I <span class="prereq">Requiere: Teorías Psicológicas</span></div>
-      </div>
-    </div>
-    <div class="card">
-      <h3 onclick="toggle(this)">4° Ciclo</h3>
-      <div class="content">
-        <div class="course">Salud Pública y Sistemas de Salud</div>
-        <div class="course">Psicopatología del Adulto I <span class="prereq">Requiere: Desarrollo del Adulto</span></div>
-        <div class="course">Psicofarmacología <span class="prereq">Requiere: Fund. Biológicos</span></div>
-        <div class="course">Neurociencia del Aprendizaje <span class="prereq">Requiere: Procesos Psicológicos II</span></div>
-        <div class="course">Evaluación Psicológica II <span class="prereq">Requiere: Evaluación Psicológica I</span></div>
-      </div>
-    </div>
-    <div class="card">
-      <h3 onclick="toggle(this)">5° Ciclo</h3>
-      <div class="content">
-        <div class="course">Prevención y Promoción de la Salud</div>
-        <div class="course">Psicopatología del Adulto II <span class="prereq">Requiere: Psicopatología del Adulto I</span></div>
-        <div class="course">Gestión del Talento Humano <span class="prereq">Requiere: Procesos Psicológicos II</span></div>
-        <div class="course">Intervenciones en Entornos Educativos <span class="prereq">Requiere: Neurociencia del Aprendizaje</span></div>
-        <div class="course">Evaluación Psicológica III <span class="prereq">Requiere: Evaluación Psicológica II</span></div>
-      </div>
-    </div>
-    <div class="card">
-      <h3 onclick="toggle(this)">6° Ciclo</h3>
-      <div class="content">
-        <div class="course">Ciencia y Descubrimiento</div>
-        <div class="course">Procesos Psicopatológicos en Niños y Adolescentes <span class="prereq">Requiere: Psicopatología del Adulto II</span></div>
-        <div class="course">Consejería Psicológica <span class="prereq">Requiere: Evaluación Psicológica III</span></div>
-        <div class="course">Orientación y Consejería Profesional y de Carrera <span class="prereq">Requiere: Evaluación Psicológica III</span></div>
-        <div class="course">Electivo I</div>
-      </div>
-    </div>
-    <div class="card">
-      <h3 onclick="toggle(this)">7° Ciclo</h3>
-      <div class="content">
-        <div class="course">Intervenciones en Salud <span class="prereq">Requiere: Intervenciones en Entornos Educativos</span></div>
-        <div class="course">Evaluación y Rehabilitación Neuropsicológica <span class="prereq">Requiere: Neurociencia del Aprendizaje</span></div>
-        <div class="course">Intervenciones Psicoterapéuticas en Adultos <span class="prereq">Requiere: Consejería Psicológica</span></div>
-        <div class="course">Intervenciones Grupales y Comunitarias <span class="prereq">Requiere: Intervenciones en Entornos Educativos</span></div>
-        <div class="course">Electivo II</div>
-      </div>
-    </div>
-    <div class="card">
-      <h3 onclick="toggle(this)">8° Ciclo</h3>
-      <div class="content">
-        <div class="course">Emprendimiento en Psicología <span class="prereq">Requiere: Intervenciones Grupales y Comunitarias</span></div>
-        <div class="course">Temas Avanzados en Psicología <span class="prereq">Requiere: Intervenciones en Salud</span></div>
-        <div class="course">Intervenciones Psicológicas en Entornos Legales <span class="prereq">Requiere: Intervenciones en Salud</span></div>
-        <div class="course">Intervenciones Psicoterapéuticas en Niños y Adolescentes <span class="prereq">Requiere: Intervenciones Psicoterapéuticas en Adultos</span></div>
-        <div class="course">Electivo III</div>
-      </div>
-    </div>
-    <div class="card">
-      <h3 onclick="toggle(this)">9° Ciclo</h3>
-      <div class="content">
-        <div class="course">Seminario de Tesis I <span class="prereq">Requiere: Ciencia y Descubrimiento</span></div>
-        <div class="course">Prácticas Preprofesionales I <span class="prereq">Requiere: Cursos del 8° ciclo</span></div>
-        <div class="course">Seminarios de Integración I <span class="prereq">Requiere: Emprendimiento en Psicología</span></div>
-      </div>
-    </div>
-    <div class="card">
-      <h3 onclick="toggle(this)">10° Ciclo</h3>
-      <div class="content">
-        <div class="course">Seminario de Tesis II <span class="prereq">Requiere: Seminario de Tesis I</span></div>
-        <div class="course">Prácticas Preprofesionales II <span class="prereq">Requiere: Prácticas Preprofesionales I</span></div>
-        <div class="course">Seminarios de Integración II <span class="prereq">Requiere: Seminarios de Integración I</span></div>
-      </div>
-    </div>
-  </div>
+  <div class="grid" id="malla"></div>
+
   <script>
-    function toggle(element) {
-      const card = element.parentElement;
-      const content = card.querySelector('.content');
-      const isVisible = content.style.display === 'block';
-      document.querySelectorAll('.content').forEach(c => c.style.display = 'none');
-      content.style.display = isVisible ? 'none' : 'block';
+    const cursos = [
+      {
+        ciclo: "1° Ciclo",
+        cursos: [
+          { nombre: "Desarrollo Humano y Social" },
+          { nombre: "Inglés I", id: "ingles1" },
+          { nombre: "Fundamentos Biológicos del Comportamiento Humano", id: "bio" },
+          { nombre: "Bases Estructurales y Funcionales del Comportamiento Humano", id: "estruct" },
+          { nombre: "Introducción a la Práctica de la Psicología", id: "intro" }
+        ]
+      },
+      {
+        ciclo: "2° Ciclo",
+        cursos: [
+          { nombre: "Estilo de Vida, Salud y Medio Ambiente" },
+          { nombre: "Inglés II", prereq: ["ingles1"], id: "ingles2" },
+          { nombre: "Desarrollo del Niño y del Adolescente", prereq: ["bio"], id: "nino" },
+          { nombre: "Teorías Psicológicas", prereq: ["estruct"], id: "teorias" },
+          { nombre: "Procesos Psicológicos I", prereq: ["intro"], id: "procesos1" }
+        ]
+      },
+      {
+        ciclo: "3° Ciclo",
+        cursos: [
+          { nombre: "Comportamiento de la Sociedad y de los Grupos" },
+          { nombre: "Desarrollo del Adulto y del Adulto Mayor", prereq: ["nino"], id: "adulto" },
+          { nombre: "Sexualidad Humana", prereq: ["teorias"], id: "sexual" },
+          { nombre: "Procesos Psicológicos II", prereq: ["procesos1"], id: "procesos2" },
+          { nombre: "Evaluación Psicológica I", prereq: ["teorias"], id: "eval1" }
+        ]
+      },
+      {
+        ciclo: "4° Ciclo",
+        cursos: [
+          { nombre: "Salud Pública y Sistemas de Salud" },
+          { nombre: "Psicopatología del Adulto I", prereq: ["adulto"], id: "psico1" },
+          { nombre: "Psicofarmacología", prereq: ["bio"], id: "farmaco" },
+          { nombre: "Neurociencia del Aprendizaje", prereq: ["procesos2"], id: "neuro" },
+          { nombre: "Evaluación Psicológica II", prereq: ["eval1"], id: "eval2" }
+        ]
+      },
+      {
+        ciclo: "5° Ciclo",
+        cursos: [
+          { nombre: "Prevención y Promoción de la Salud" },
+          { nombre: "Psicopatología del Adulto II", prereq: ["psico1"], id: "psico2" },
+          { nombre: "Gestión del Talento Humano", prereq: ["procesos2"] },
+          { nombre: "Intervenciones en Entornos Educativos", prereq: ["neuro"], id: "educa" },
+          { nombre: "Evaluación Psicológica III", prereq: ["eval2"], id: "eval3" }
+        ]
+      },
+      {
+        ciclo: "6° Ciclo",
+        cursos: [
+          { nombre: "Ciencia y Descubrimiento", id: "ciencia" },
+          { nombre: "Procesos Psicopatológicos en Niños y Adolescentes", prereq: ["psico2"] },
+          { nombre: "Consejería Psicológica", prereq: ["eval3"], id: "consejeria" },
+          { nombre: "Orientación y Consejería Profesional", prereq: ["eval3"] },
+          { nombre: "Electivo I" }
+        ]
+      },
+      {
+        ciclo: "7° Ciclo",
+        cursos: [
+          { nombre: "Intervenciones en Salud", prereq: ["educa"], id: "salud" },
+          { nombre: "Evaluación y Rehabilitación Neuropsicológica", prereq: ["neuro"] },
+          { nombre: "Intervenciones Psicoterapéuticas en Adultos", prereq: ["consejeria"], id: "adultos" },
+          { nombre: "Intervenciones Grupales y Comunitarias", prereq: ["educa"], id: "grupal" },
+          { nombre: "Electivo II" }
+        ]
+      },
+      {
+        ciclo: "8° Ciclo",
+        cursos: [
+          { nombre: "Emprendimiento en Psicología", prereq: ["grupal"] },
+          { nombre: "Temas Avanzados en Psicología", prereq: ["salud"] },
+          { nombre: "Intervenciones en Entornos Legales", prereq: ["salud"] },
+          { nombre: "Intervenciones Psicoterapéuticas en Niños y Adolescentes", prereq: ["adultos"] },
+          { nombre: "Electivo III" }
+        ]
+      }
+    ];
+
+    const estadoCursos = new Set();
+
+    function renderMalla() {
+      const contenedor = document.getElementById('malla');
+      contenedor.innerHTML = '';
+
+      cursos.forEach(({ ciclo, cursos }) => {
+        const card = document.createElement('div');
+        card.className = 'card';
+
+        const title = document.createElement('h3');
+        title.textContent = ciclo;
+        title.onclick = () => cursosDiv.style.display = cursosDiv.style.display === 'block' ? 'none' : 'block';
+
+        const cursosDiv = document.createElement('div');
+        cursosDiv.className = 'courses';
+
+        cursos.forEach(curso => {
+          const div = document.createElement('div');
+          div.className = 'course';
+          div.textContent = curso.nombre;
+
+          if (curso.id) div.dataset.id = curso.id;
+          if (curso.prereq) div.dataset.prereq = curso.prereq.join(',');
+
+          div.onclick = () => {
+            if (div.classList.contains('completed')) return;
+            const requisitos = curso.prereq || [];
+            if (requisitos.every(req => estadoCursos.has(req))) {
+              div.classList.add('completed');
+              if (curso.id) estadoCursos.add(curso.id);
+              renderMalla();
+            } else {
+              alert('Primero debes completar los cursos requeridos.');
+            }
+          };
+
+          if (!curso.prereq || curso.prereq.every(req => estadoCursos.has(req))) {
+            div.classList.remove('disabled');
+          } else {
+            div.style.opacity = 0.5;
+          }
+
+          cursosDiv.appendChild(div);
+        });
+
+        card.appendChild(title);
+        card.appendChild(cursosDiv);
+        contenedor.appendChild(card);
+      });
     }
+
+    renderMalla();
   </script>
 </body>
 </html>
